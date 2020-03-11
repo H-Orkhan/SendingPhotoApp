@@ -16,13 +16,18 @@ public class PhotoUploadController {
         this.storageService = storageService;
     }
 
-    @PostMapping("/")
+    @PostMapping("/upload")
     public void uploadPhoto(@RequestParam("file") MultipartFile file) throws IOException {
         storageService.uploadPhoto(file);
     }
 
-    @GetMapping("/")
+    @GetMapping("/getAll")
     public Iterable<Photo> getPhoto () {
         return storageService.getPhoto();
+    }
+
+    @GetMapping("/get/{id}")
+    public Photo getPhotoById(@PathVariable int id) {
+        return storageService.getPhotoById(id);
     }
 }

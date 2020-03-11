@@ -11,22 +11,14 @@ public class Photo {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-
-    private String name;
-
     private String url;
-
-    public String getName() {
-        return name;
-    }
 
     public String getUrl() {
         return url;
     }
 
-    public Photo(String originalFilename, String path) {
-        this.name=originalFilename;
-        this.url=path;
+    public Photo(String path) {
+        this.url = path;
     }
 
     public Photo() {

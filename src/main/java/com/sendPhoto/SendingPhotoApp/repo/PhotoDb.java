@@ -4,5 +4,5 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface PhotoDb extends CrudRepository<Photo,String> {
+public interface PhotoDb extends CrudRepository<Photo,Integer> {
 }
