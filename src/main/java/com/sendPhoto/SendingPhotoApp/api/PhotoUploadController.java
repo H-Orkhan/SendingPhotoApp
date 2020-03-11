@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.util.Collection;
 
 @RestController
 public class PhotoUploadController {
@@ -17,8 +18,8 @@ public class PhotoUploadController {
     }
 
     @PostMapping("/upload")
-    public void uploadPhoto(@RequestParam("file") MultipartFile file) throws IOException {
-        storageService.uploadPhoto(file);
+    public void uploadPhoto(@RequestParam("file") Collection<MultipartFile> files) throws IOException {
+        storageService.uploadPhoto(files);
     }
 
     @GetMapping("/getAll")
